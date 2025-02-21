@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import DetailView  # ✅ Ensure DetailView is used
-from .models import Book, Library  # ✅ Ensure Library is imported
+from .models import Book, Library  # ✅ Import Library (Fixes the error!)
 
 # Function-Based View (FBV) for listing books
 def list_books(request):
