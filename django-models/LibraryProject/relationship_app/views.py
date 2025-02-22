@@ -1,6 +1,7 @@
+from .models import Library
 from django.shortcuts import render
 from django.views.generic.detail import DetailView
-from .models import Book, Library  # Ensure both models are imported
+from .models import Book, Library  # Ensure Library is imported
 
 # Function-based view to list all books
 def list_books(request):
@@ -9,8 +10,8 @@ def list_books(request):
 
 # Class-based view for library details
 class LibraryDetailView(DetailView):
-    model = Library  # Uses Django's DetailView for class-based structure
-    template_name = "relationship_app/library_detail.html"  # Ensure template path is correct
+    model = Library
+    template_name = "relationship_app/library_detail.html"  # Ensure template exists
     context_object_name = "library"
 
     def get_context_data(self, **kwargs):
