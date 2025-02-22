@@ -8,7 +8,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)  # Automatically log in after registration
-            return redirect('home')  # Update 'home' to your actual homepage
+            return redirect('home')  # Change 'home' to your actual homepage
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
